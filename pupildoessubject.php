@@ -25,14 +25,14 @@
         
         <select name = "subjects">
         <?php
-        include_once('connection.php');
+       
         $stmt = $conn->prepare("SELECT * FROM TblSubjects ORDER BY Subjectname ASC");
         $stmt->execute();
 
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            echo('<option value='.$row["UserID"].'>'.$row["Subjectname"].', '.$row["Teacher"].'</option>');
+            echo('<option value='.$row["SubjectID"].'>'.$row["Subjectname"].', '.$row["Teacher"].'</option>');
         }
         ?>
         </select>
